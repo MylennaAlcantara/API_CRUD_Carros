@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { categoriaCarroModel } from "src/model/categoriaCarro.model";
-import { categoriaCarroSchema } from "src/schemas/categoriacarro.schema";
+import { categoriaCarroSchema } from "src/schemas/categoriaCarro.schema";
 import { Repository } from "typeorm";
 
 @Injectable()
