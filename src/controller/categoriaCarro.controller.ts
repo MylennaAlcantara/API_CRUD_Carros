@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
 import { categoriaCarroModel } from "src/model/categoriaCarro.model";
-import { categoriaCarroSchema } from "src/schemas/categoriacarro.schema";
+import { categoriaCarroSchema } from "src/schemas/categoriaCarro.schema";
 import { categoriaCarroService } from "src/services/categoriaCarro.service";
 
 @Controller('/categoria')
