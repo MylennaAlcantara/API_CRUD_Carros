@@ -6,9 +6,10 @@ import { AppController } from './app.controller';
 import { ormConfig } from 'ormconfig';
 import { categoriaCarroModule } from './modules/categoriaCarro.module';
 import { UsuarioModule } from './usuario/usuario.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(ormConfig), modeloCarroModule, categoriaCarroModule, UsuarioModule],
+  imports: [TypeOrmModule.forRoot(ormConfig), modeloCarroModule, categoriaCarroModule, UsuarioModule, AuthModule],
   controllers: [AppController],
   providers: [AppService]
 })

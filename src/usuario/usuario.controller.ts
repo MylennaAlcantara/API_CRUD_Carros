@@ -8,7 +8,7 @@ export class UsuarioController{
         private usuarioRepository: UsuarioService
     ){}
 
-    @Get("/${email}")
+    @Get("/:email")
     async buscarUsuario(@Param() email: string){
         return await this.usuarioRepository.findByEmail(email);
     }
