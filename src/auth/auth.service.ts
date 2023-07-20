@@ -27,7 +27,7 @@ export class AuthService{
               { email: payload.email },
               {
                 secret: '123456abcd',
-                expiresIn: '50s',
+                expiresIn: '120s',
               },
             ),
           };

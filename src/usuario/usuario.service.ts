@@ -24,4 +24,8 @@ export class UsuarioService{
             }
         });
     }
+
+    async findAll(){
+        return await this.UsuarioRepository.find();
+    }
 }

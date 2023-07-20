@@ -1,4 +1,5 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Post, Put, UseGuards } from "@nestjs/common";
+import { AuthGuard } from "@nestjs/passport";
 import { modeloCarroModel } from "src/model/modeloCarro.model";
 import { modeloCarroSchema } from "src/schemas/modeloCarro.schema";
 import { ModeloCarroService } from "src/services/modeloCarro.service";
@@ -17,6 +18,7 @@ export class modeloCarroController {
     }
     
     @Get()
+    @UseGuards(AuthGuard('jwt'))
     public async getAll(){
         const list = await this.modeloRepository.getAll();
         return {list};

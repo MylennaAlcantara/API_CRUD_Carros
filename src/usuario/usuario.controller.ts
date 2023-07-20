@@ -1,6 +1,8 @@
-import { Body, Controller, Get, Param, Post } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post, UseGuards } from "@nestjs/common";
 import { UsuarioService } from "./usuario.service";
 import { UsuarioSchema } from "./usuario.schema";
+import { UsuarioModel } from "./usuario.model";
+import { AuthGuard } from "@nestjs/passport";
 
 @Controller("usuario")
 export class UsuarioController{
@@ -16,5 +18,11 @@ export class UsuarioController{
     @Post("/cadastro")
     async cadastrarUsuario(@Body() body: UsuarioSchema){
         return await this.usuarioRepository.create(body);
+    }
+
+    @Get()
+    @UseGuards(AuthGuard('jwt'))
+    async getAll(){
+        return await this.usuarioRepository.findAll();
     }
 }
